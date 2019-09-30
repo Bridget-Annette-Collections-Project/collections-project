@@ -72,14 +72,18 @@ import java.util.HashMap;
            public static void userDisplay() {
 
                String nameList = " | ";
-
                for (String username : students.keySet()) {
                    nameList += " " + username + " | ";
 
+
                }
                System.out.println(nameList);
+//                   System.out.println(students.get(nameList).getGrades());
 
            }
+
+
+//        String array[] = new String[arrlist.size()];
 
 
         ///Print the list of GitHub usernames out to the console, and ask the user which student they would
@@ -93,7 +97,8 @@ import java.util.HashMap;
                 // compare userInput with usernames
                 if (students.containsKey(key)) {
                     System.out.printf("Name: %s - Github Username: %s%n", students.get(key).getName(), key);
-                    System.out.printf("Current Average: %.2f%n%n", students.get(key).getGradeAverage());
+                    System.out.printf("Current Average: %.2f%n", students.get(key).getGradeAverage());
+                    System.out.printf("All grades: %s \n", students.get(key).getGrades().toString());
                     //System.out.printf("Student grades are: %s", students.get(key).addGrade());
                     // output student record
                 } else {
@@ -118,7 +123,7 @@ import java.util.HashMap;
                 String userChoice = userInput.nextLine();
                 userSelection(userChoice);
 
-                System.out.println("Would you like to see more about another student? \n");
+                System.out.println("\nWould you like to see more about another student? \n");
                 String userContinue = userInput.nextLine();
 
                 if (userContinue.equalsIgnoreCase("yes") || userContinue.equalsIgnoreCase("y")){
